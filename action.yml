@@ -1,0 +1,9 @@
+name: 'Trufflehog Actions Scan'
+description: 'Scan repository for secrets with basic trufflehog defaults in place for easy setup.'
+author: 'Ed Plato'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'shield'  
+  color: 'yellow'
