@@ -18,6 +18,14 @@ action "edplato/trufflehog-actions-scan" {
 
 ```
 
+Default trufflehog options for this tool include:
+
+- regex : Enable high signal regex checks
+
+- entropy disabled: Disabled entropy checks
+
+- max depth is 50: The max commit depth to go back when searching for secrets
+
 Edit your corresponding actions `yml` file or create a new one.
 
 ### Basic
