@@ -1,4 +1,4 @@
-FROM python:3.7-slim-buster
+FROM python:2-alpine
 
 LABEL name="trufflehog-actions-scan"
 LABEL version="1.0.0"
@@ -12,8 +12,9 @@ LABEL "com.github.actions.icon"="shield"
 LABEL "com.github.actions.color"="yellow"
 
 RUN pip install truffleHog
-RUN apk --update add --no-cache git less openssh && \
-  rm -rf /var/lib/apt/lists/*
+RUN apk --update add git less openssh && \
+  rm -rf /var/lib/apt/lists/* && \
+  rm /var/cache/apk/*
 
 ADD entrypoint.sh  /entrypoint.sh
 
