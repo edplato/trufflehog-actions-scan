@@ -45,8 +45,7 @@ steps:
 - name: trufflehog-actions-scan
   uses: edplato/trufflehog-actions-scan@master
     with:
-  args:
-    - "--regex --entropy=False --max_depth=5" # Add custom options here*
+      args: "--regex --entropy=False --max_depth=5" # Add custom options here*
 
 ```
 
