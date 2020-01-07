@@ -14,5 +14,6 @@ else
 fi
 
 echo "${INPUT_GITHUBTOKEN}"
+echo "$githubRepo"
 
 trufflehog $args $githubRepo
