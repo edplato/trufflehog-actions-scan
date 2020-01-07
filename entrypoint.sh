@@ -7,5 +7,11 @@ if [ -n "$1" ]; then
   args="$@" # Overwrite if new options string is provided
 fi
 
-githubRepo="https://github.com/$GITHUB_REPOSITORY"
+
+if [ -n "${INPUT_GITHUBTOKEN}" ]; then
+  githubRepo="https://$INPUT_GITHUBTOKEN@github.com/$GITHUB_REPOSITORY"
+else
+  githubRepo="https://github.com/$GITHUB_REPOSITORY"
+fi
+
 trufflehog $args $githubRepo
