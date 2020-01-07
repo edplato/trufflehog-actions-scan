@@ -4,7 +4,7 @@ set -e # Abort script at first error
 args="--regex --entropy=False --max_depth=50" # Default trufflehog options
 
 if [ -n "$1" ]; then
-  args="$@" # Overwrite if new options string is provided
+  args="${INPUT_SCANARGUMENTS}" # Overwrite if new options string is provided
 fi
 
 if [ -n "${INPUT_GITHUBTOKEN}" ]; then
