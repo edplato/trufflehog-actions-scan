@@ -4,6 +4,10 @@ author: 'Ed Plato'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+inputs:
+  githubToken:
+    description: 'GitHub Token to access a private repository.'
+    required: false
 branding:
   icon: 'shield'  
   color: 'yellow'
