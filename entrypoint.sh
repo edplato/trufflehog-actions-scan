@@ -14,6 +14,8 @@ else
 fi
 
 echo "${INPUT_GITHUBTOKEN}"
+echo "${INPUT_SCANARGUMENTS}"
 echo "$githubRepo"
+echo "$args"
 
 trufflehog $args $githubRepo

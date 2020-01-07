@@ -8,6 +8,9 @@ inputs:
   githubToken:
     description: 'GitHub Token to access a private repository.'
     required: false
+  scanArguments:
+    description: 'Argument options for scan.'
+    required: false
 branding:
   icon: 'shield'  
   color: 'yellow'
