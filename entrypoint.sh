@@ -13,9 +13,4 @@ else
   githubRepo="https://github.com/$GITHUB_REPOSITORY" # Default target repository
 fi
 
-echo "${INPUT_GITHUBTOKEN}"
-echo "${INPUT_SCANARGUMENTS}"
-echo "$githubRepo"
-echo "$args"
-
 trufflehog $args $githubRepo
