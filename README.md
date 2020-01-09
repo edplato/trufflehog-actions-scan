@@ -48,8 +48,8 @@ steps:
 - uses: actions/checkout@master
 - name: trufflehog-actions-scan
   uses: edplato/trufflehog-actions-scan@master
-    with:
-      args: "--regex --entropy=False --max_depth=5" # Add custom options here*
+  with:
+    scanArguments: "--regex --entropy=False --max_depth=5" # Add custom options here*
 
 ```
 
@@ -57,7 +57,8 @@ steps:
 
 ### Private GitHub Repository
 
-Pass a GitHub access token to action to clone from a private GitHub repository. You can't use the default `GITHUB_TOKEN` as it doesn't have the permission to clone the repository. You have to create an access token manually.
+Pass a GitHub access token to action to clone from a private GitHub repository.
+You can't use the default `GITHUB_TOKEN` as it doesn't have the permission to clone the repository.
 
 ```yaml
 steps:
@@ -65,7 +66,8 @@ steps:
 - name: trufflehog-actions-scan
   uses: edplato/trufflehog-actions-scan@master
   with:
-    githubToken: ${{ secrets.GITHUB_CLONE_TOKEN }}
+    githubToken: ${{ secrets.GITHUB_CLONE_TOKEN }} # You have to create an access token manually
+
 ```
 
 ----
