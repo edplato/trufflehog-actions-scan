@@ -6,7 +6,10 @@ runs:
   image: 'Dockerfile'
 inputs:
   githubToken:
-    description: 'GitHub Token to access a privat repository'
+    description: 'GitHub Token to access a private repository.'
+    required: false
+  scanArguments:
+    description: 'Argument options for scan.'
     required: false
 branding:
   icon: 'shield'  
