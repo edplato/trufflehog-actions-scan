@@ -38,7 +38,7 @@ Edit your corresponding actions `yml` file or create a new one.
 steps:
 - uses: actions/checkout@master
 - name: trufflehog-actions-scan
-    uses: edplato/trufflehog-actions-scan@master
+  uses: edplato/trufflehog-actions-scan@master
 ```
 
 ### Custom Arguments
