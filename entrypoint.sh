@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 set -e # Abort script at first error
 
-args="--regex --entropy=False --max_depth=50" # Default trufflehog options
+args="--regex --entropy=False --max_depth=50 --rules /regexes.json" # Default trufflehog options
 
 if [ -n "${INPUT_SCANARGUMENTS}" ]; then
   args="${INPUT_SCANARGUMENTS}" # Overwrite if new options string is provided
@@ -12,5 +12,6 @@ if [ -n "${INPUT_GITHUBTOKEN}" ]; then
 else
   githubRepo="https://github.com/$GITHUB_REPOSITORY" # Default target repository
 fi
+
 
 trufflehog $args $githubRepo
