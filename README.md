@@ -30,6 +30,8 @@ Default trufflehog options for this tool include:
 
 - max depth is 50: The max commit depth to go back when searching for secrets
 
+For custom regex rules:
+
 - rules: Uses custom [regexes.json](regexes/regexes.json)
   - Note: this is similar to the default `trufflehog` version, however this `regexes.json` will catch some additional API keys including any key Encapsulation Boundary that ends in ` PRIVATE KEY-----` or ` PRIVATE KEY BLOCK-----`.
 
@@ -52,7 +54,7 @@ steps:
 - name: trufflehog-actions-scan
   uses: edplato/trufflehog-actions-scan@master
   with:
-    scanArguments: "--regex --entropy=False --max_depth=5 --rules regexes/regexes.json" # Add custom options here*
+    scanArguments: "--regex --entropy=False --max_depth=5 --rules /regexes.json" # Add custom options here*
 
 ```
 
