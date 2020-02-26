@@ -13,4 +13,5 @@ else
   githubRepo="https://github.com/$GITHUB_REPOSITORY" # Default target repository
 fi
 
+
 trufflehog $args $githubRepo
