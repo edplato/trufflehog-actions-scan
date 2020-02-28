@@ -8,7 +8,7 @@ RUN apk --update add git less openssh && \
   rm -rf /var/lib/apt/lists/* && \
   rm /var/cache/apk/*
 
-ADD entrypoint.sh  /entrypoint.sh
-ADD regexes.json /regexes.json
+COPY entrypoint.sh /entrypoint.sh
+COPY regexes.json /regexes.json
 
 ENTRYPOINT ["/entrypoint.sh"]
