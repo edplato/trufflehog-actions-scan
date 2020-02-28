@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 args="--regex --rules regexes.json --entropy=False"
 
