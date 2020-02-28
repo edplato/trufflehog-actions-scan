@@ -1,5 +1,5 @@
 name: 'Trufflehog'
-description: 'Scan for committed secrets with zero configuration.'
+description: 'Scan for committed secrets with minimal configuration.'
 runs:
   using: 'docker'
   image: 'Dockerfile'
