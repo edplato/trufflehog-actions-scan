@@ -1,4 +1,4 @@
-FROM python:3.7-alpine
+FROM python:3.7
 
 LABEL repository="https://github.com/UnicornGlobal/trufflehog-actions-scan"
 LABEL homepage="https://github.com/actions"
