@@ -8,5 +8,6 @@ fi
 
 pwd
 ls -la
+cp /regexes.json regexes.json
 echo "Running with ${args}\n"
 trufflehog $args .
