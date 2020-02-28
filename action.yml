@@ -1,4 +1,4 @@
-name: 'Trufflehog'
+name: 'Trufflehog Check'
 description: 'Scan for committed secrets with minimal configuration.'
 runs:
   using: 'docker'
