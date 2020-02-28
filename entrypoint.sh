@@ -9,5 +9,6 @@ fi
 pwd
 ls -la
 cp /regexes.json regexes.json
+which trufflehog
 echo "Running with ${args}\n"
 trufflehog $args .
