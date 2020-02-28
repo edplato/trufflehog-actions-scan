@@ -1,16 +1,8 @@
-name: 'Trufflehog Actions Scan'
-description: 'Scan repository for secrets with basic trufflehog defaults in place for easy setup.'
-author: 'Ed Plato'
+name: 'Trufflehog'
+description: 'Scan for committed secrets with zero configuration.'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-inputs:
-  githubToken:
-    description: 'GitHub Token to access a private repository.'
-    required: false
-  scanArguments:
-    description: 'Argument options for scan.'
-    required: false
 branding:
-  icon: 'shield'  
-  color: 'yellow'
+  icon: 'lock'
+  color: 'orange'
