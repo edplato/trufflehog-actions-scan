@@ -7,8 +7,8 @@ if [ -n "${INPUT_BRANCH}" ]; then
 fi
 
 pwd
-ls -la
 cp /regexes.json regexes.json
 which trufflehog
+ls -la
 echo "Running with ${args}\n"
-trufflehog $args .
+/usr/local/bin/trufflehog ${args} .
