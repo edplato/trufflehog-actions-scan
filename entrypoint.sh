@@ -7,7 +7,7 @@ if [ -n "${INPUT_BRANCH}" ]; then
 fi
 
 pwd
-cp /regexes.json regexes.json
+cp /regexes.json /github/workspace/regexes.json
 which trufflehog
 ls -la
 echo "Running with ${args}\n"
