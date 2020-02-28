@@ -1,7 +1,12 @@
 #!/usr/bin/env sh
 
-args="--regex --entropy=False --max_depth=50"
+args="--regex --rules regexes.json --entropy=False"
+
+if [ -n "${INPUT_BRANCH}" ]; then
+  args="${args} --branch ${INPUT_BRANCH}"
+fi
 
 pwd
 ls -la
-trufflehog $args file:///github/workspace/.git
+echo "Running with ${args}\n"
+trufflehog $args .

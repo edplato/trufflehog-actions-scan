@@ -3,6 +3,10 @@ description: 'Scan for committed secrets with zero configuration.'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+inputs:
+  branch:
+    description: 'Branch to run the check on'
+    required: false
 branding:
   icon: 'lock'
   color: 'orange'
