@@ -31,7 +31,7 @@
   "LinkedIn API Key": "[l|L][i|I][n|N][k|K][e|E][d|D][i|I][n|N].*['|\"][0-9a-zA-Z]{16}['|\"]",
   "MailChimp API Key": "[0-9a-f]{32}-us[0-9]{1,2}",
   "Mailgun API Key": "key-[0-9a-zA-Z]{32}",
-  "Password in URL": "[a-zA-Z]{3,10}://[^/\\s:@]{3,20}:[^/\\s:@]{3,20}@.{1,100}[\"'\\s]",
+  "Password in URL": "[a-zA-Z]{1,100}:\/\/[a-z0-9_]([a-z0-9_-]{0,31}|[a-z0-9_-]{0,30}):.*@[a-zA-Z0-9-_]{1,1024}.?[a-zA-Z-]{0,100}",
   "PayPal Braintree Access Token": "access_token\\$production\\$[0-9a-z]{16}\\$[0-9a-f]{32}",
   "Picatic API Key": "sk_live_[0-9a-z]{32}",
   "Slack Webhook": "https://hooks.slack.com/services/T[a-zA-Z0-9_]{8}/B[a-zA-Z0-9_]{8}/[a-zA-Z0-9_]{24}",
