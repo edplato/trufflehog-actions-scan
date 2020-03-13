@@ -13,5 +13,5 @@ else
   githubRepo="https://github.com/$GITHUB_REPOSITORY" # Default target repository
 fi
 
-
-trufflehog $args $githubRepo
+query="$args $githubRepo" # Build args query with repository url
+trufflehog $query
