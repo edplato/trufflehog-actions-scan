@@ -59,6 +59,7 @@ steps:
 ```
 
 *if custom options argument string is used, it will overwrite default settings
+*if you want to just run the `trufflehog` command with NO arguments, set as a single spaced string `" "`
 
 ### Private GitHub Repository
 
