@@ -1,5 +1,9 @@
 FROM python:3.7-alpine
 
+ENV HTTP_PROXY=$HTTP_PROXY
+ENV HTTPS_PROXY=$HTTPS_PROXY
+ENV NO_PROXY=$NO_PROXY
+
 LABEL name="trufflehog-actions-scan"
 LABEL version="1.0.0"
 LABEL repository="https://github.com/edplato/trufflehog-actions-scan"
