@@ -63,4 +63,7 @@ steps:
 
 ----
 
+### Proxy
+Building the docker container requires access to pypi.python.org/pypi. If you are running this action ob a self-hosted runner behind a proxy, you can configure the docker client to [flow proxy info to the container](https://docs.docker.com/network/proxy/#configure-the-docker-client). This action will respect the `HTTP_PROXY`, `HTTPS_PROXY`, and `NO_PROXY` settings in `~/.docker/config.json`, if set.
+
 [MIT License](LICENSE)
