@@ -61,9 +61,24 @@ steps:
 *if custom options argument string is used, it will overwrite default settings
 *if you want to just run the `trufflehog` command with NO arguments, set as a single spaced string `" "`
 
+### Private GitHub Repository
+
+Pass a GitHub access token to action to clone from a private GitHub repository.
+You can't use the default `GITHUB_TOKEN` as it doesn't have the permission to clone the repository.
+
+```yaml
+steps:
+- uses: actions/checkout@master
+- name: trufflehog-actions-scan
+  uses: edplato/trufflehog-actions-scan@master
+  with:
+    githubToken: ${{ secrets.GITHUB_CLONE_TOKEN }} # You have to create an access token manually
+```
+
 ----
 
 ### Proxy
+
 Building the docker container requires access to pypi.python.org/pypi. If you are running this action ob a self-hosted runner behind a proxy, you can configure the docker client to [flow proxy info to the container](https://docs.docker.com/network/proxy/#configure-the-docker-client). This action will respect the `HTTP_PROXY`, `HTTPS_PROXY`, and `NO_PROXY` settings in `~/.docker/config.json`, if set.
 
 [MIT License](LICENSE)

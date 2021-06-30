@@ -8,9 +8,19 @@ if [ -n "${INPUT_SCANARGUMENTS}" ]; then
   args="${INPUT_SCANARGUMENTS}" # Overwrite if new options string is provided
 fi
 
-# By default the 'WORKDIR' of our Docker image is set to the 'GITHUB_WORKSPACE'
-# which is mounted into our image. This means, as long as a checkout action was
-# done before our action runs, we'll have access to the repository.
-githubRepo="file://$(pwd)" # Default target repository
+# Use current branch if not provided
+if [ "$(echo "$args")" != *"branch"* ]; then
+  branch=${GITHUB_REF%:*}
+  branch=${branch##*/}
+  args="${args} --branch=${branch}"
+fi
+
+# Use repository - using 'GITHUB_WORKSPACE' does not allow certain options (e.g., max_depth, since_commit)
+if [ -n "${INPUT_GITHUBTOKEN}" ]; then
+  githubRepo="https://$INPUT_GITHUBTOKEN@github.com/$GITHUB_REPOSITORY" # Overwrite for private repository if token provided
+else
+  githubRepo="https://github.com/$GITHUB_REPOSITORY" # Default target repository
+fi
+
 query="$args $githubRepo" # Build args query with repository url
 trufflehog $query
