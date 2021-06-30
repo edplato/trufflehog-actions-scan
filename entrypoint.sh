@@ -23,4 +23,6 @@ else
 fi
 
 query="$args $githubRepo" # Build args query with repository url
+echo "$query"
+echo "$GITHUB_SHA"
 trufflehog $query

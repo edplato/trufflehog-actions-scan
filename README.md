@@ -59,6 +59,7 @@ steps:
 ```
 
 *if custom options argument string is used, it will overwrite default settings
+*if no branch is set using (e.g., `--branch=develop`), then the current branch that triggered the workflow will be used - Note: this is the most likely desired behavior
 *if you want to just run the `trufflehog` command with NO arguments, set as a single spaced string `" "`
 
 ### Private GitHub Repository
