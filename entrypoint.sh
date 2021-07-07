@@ -25,7 +25,7 @@ fi
 query="$args $githubRepo" # Build args query with repository url
 echo "$query"
 echo "$GITHUB_SHA"
-echo "${{ env.BEFORE_SHA }}"
 echo "$BEFORE_SHA"
+echo "${BEFORE_SHA}"
 git rev-parse HEAD
 trufflehog $query
