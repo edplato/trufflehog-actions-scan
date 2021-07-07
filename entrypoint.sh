@@ -25,4 +25,5 @@ fi
 query="$args $githubRepo" # Build args query with repository url
 echo "$query"
 echo "$GITHUB_SHA"
+git rev-parse HEAD
 trufflehog $query
