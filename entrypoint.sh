@@ -9,7 +9,7 @@ if [ -n "${INPUT_SCANARGUMENTS}" ]; then
 fi
 
 # Use current branch if not provided
-if [ "$(echo "$args")" != *"branch"* ]; then
+if [[ $args != *"branch"* ]]; then
   branch=${GITHUB_REF%:*}
   branch=${branch##*/}
   args="${args} --branch=${branch}"
@@ -26,6 +26,4 @@ query="$args $githubRepo" # Build args query with repository url
 echo "$query"
 echo "$GITHUB_SHA"
 echo "$BEFORE_SHA"
-echo "${BEFORE_SHA}"
-git rev-parse HEAD
-trufflehog $query
+# trufflehog $query

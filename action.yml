@@ -11,6 +11,9 @@ inputs:
   scanArguments:
     description: 'Argument options for scan.'
     required: false
+  sinceBefore:
+    description: 'Scan since commit SHA prior to push.'
+    required: false
 branding:
   icon: 'shield'
   color: 'yellow'
