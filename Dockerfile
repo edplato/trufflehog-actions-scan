@@ -6,8 +6,8 @@ ENV NO_PROXY=$NO_PROXY
 
 LABEL name="trufflehog-actions-scan"
 LABEL version="1.0.0"
-LABEL repository="https://github.com/edplato/trufflehog-actions-scan"
-LABEL homepage="https://github.com/edplato/trufflehog-actions-scan"
+LABEL repository="https://github.com/SiddamsettySahithi/trufflehog-actions-scan"
+LABEL homepage="https://github.com/SiddamsettySahithi/trufflehog-actions-scan"
 LABEL maintainer="Ed Plato"
 
 LABEL "com.github.actions.name"="Trufflehog Actions Scan"
