@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 
-args="--format=html --no-entropy" # Default trufflehog options
+set -e # Abort script at first error
+
+args="--regex --no-entropy" # Default trufflehog options
 
 if [ -n "${INPUT_SCANARGUMENTS}" ]; then
   args="${INPUT_SCANARGUMENTS}" # Overwrite if new options string is provided
