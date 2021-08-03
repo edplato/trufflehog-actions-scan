@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-args="--regex --no-entropy --max_depth=50" # Default trufflehog options
+args="--rules --format=html --output=secrets.html --no-entropy " # Default trufflehog options
 
 if [ -n "${INPUT_SCANARGUMENTS}" ]; then
   args="${INPUT_SCANARGUMENTS}" # Overwrite if new options string is provided
