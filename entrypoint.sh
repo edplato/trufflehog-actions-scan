@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-args="--format=html --output=secrets.html --no-entropy " # Default trufflehog options
+args="--format=html --output=secrets.html" # Default trufflehog options
 
 if [ -n "${INPUT_SCANARGUMENTS}" ]; then
   args="${INPUT_SCANARGUMENTS}" # Overwrite if new options string is provided
