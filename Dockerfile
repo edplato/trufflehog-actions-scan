@@ -15,7 +15,7 @@ LABEL "com.github.actions.description"="Scan repository for secrets with basic t
 LABEL "com.github.actions.icon"="shield"
 LABEL "com.github.actions.color"="yellow"
 
-RUN pip install gitdb2==3.0.0 truffleHog==2.0.99
+RUN pip3 install gitdb2==3.0.0 truffleHog==3.0
 RUN apk --update add git less openssh && \
   rm -rf /var/lib/apt/lists/* && \
   rm /var/cache/apk/*
