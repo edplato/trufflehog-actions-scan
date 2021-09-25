@@ -58,8 +58,23 @@ steps:
 
 ```
 
-*if custom options argument string is used, it will overwrite default settings
-*if you want to just run the `trufflehog` command with NO arguments, set as a single spaced string `" "`
+* if custom options argument string is used, it will overwrite default settings
+* if you want to just run the `trufflehog` command with NO arguments, set as a single spaced string `" "`
+
+### If using `actions/checkout@v2`
+
+```yaml
+steps:
+- uses: actions/checkout@v2
+  with:
+    fetch-depth: 0
+- name: trufflehog-actions-scan
+  uses: edplato/trufflehog-actions-scan@master
+  with:
+    scanArguments: "--regex --entropy=False --max_depth=5 --rules /regexes.json" # Add custom options here*
+
+```
+With `actions/checkout@v2` make sure to include `fetch-depth: 0` when checking out the repository as it will make the entire git commit history available to be scanned. Alternatively, ensure the value for `fetch-depth` is greater than the `max_depth` flag used by trufflehog to ensure that trufflehog runs at your desired commit history depth.
 
 ----
 
