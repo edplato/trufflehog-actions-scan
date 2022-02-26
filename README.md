@@ -41,7 +41,7 @@ Edit your corresponding actions `yml` file or create a new one.
 
 `trufflehog-actions-scan` now uses `actions/checkout@v2`. Using a previous version may cause issues with future support of this action.
 
-With `actions/checkout@v2` make sure to include `fetch-depth: 0` as shown below when checking out the repository as it will make the entire git commit history available to be scanned. Alternatively, ensure the value for `fetch-depth` is greater than the `max_depth` flag used by trufflehog to ensure that trufflehog runs at your desired commit history depth.
+With `actions/checkout@v2` make sure to include `fetch-depth: 0` as shown below when checking out the repository as it will make the entire git commit history available to be scanned. Alternatively, ensure the value for `fetch-depth` is greater than the `max_depth` flag used by trufflehog to ensure that trufflehog runs at your desired commit history depth. `ref: ${{ github.head_ref }}` is necessary for pull request workflow trigger.
 
 
 ### Basic
@@ -51,6 +51,7 @@ steps:
 - uses: actions/checkout@v2
   with:
     fetch-depth: 0
+    ref: ${{ github.head_ref }} // necessary for pull request workflow trigger
 - name: trufflehog-actions-scan
   uses: edplato/trufflehog-actions-scan@master
 ```
@@ -62,6 +63,7 @@ steps:
 - uses: actions/checkout@v2
   with:
     fetch-depth: 0
+    ref: ${{ github.head_ref }} // necessary for pull request workflow trigger
 - name: trufflehog-actions-scan
   uses: edplato/trufflehog-actions-scan@master
   with:
