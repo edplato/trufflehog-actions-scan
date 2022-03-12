@@ -1,6 +1,6 @@
 #!/bin/bash
 
-args="--regex --rules regexes.json --entropy=False"
+args="--regex --rules regexes.json --entropy=False --exclude_paths .truffleignore"
 
 if [ -n "${INPUT_BRANCH}" ]; then
   args="${args} --branch ${INPUT_BRANCH}"
