@@ -7,6 +7,9 @@ inputs:
   branch:
     description: 'Branch to run the check on'
     required: false
+  scanArguments:
+    description: 'Argument options for scan'
+    required: false
 branding:
-  icon: 'lock'
-  color: 'orange'
+  icon: 'shield'
+  color: 'yellow'
