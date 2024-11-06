@@ -15,7 +15,7 @@ LABEL "com.github.actions.description"="Scan repository for secrets with basic t
 LABEL "com.github.actions.icon"="shield"
 LABEL "com.github.actions.color"="yellow"
 
-RUN pip3 install trufflehog3==3.0.10
+RUN pip3 install truffleHog==2.2.1
 RUN apk --update add git less openssh && \
   rm -rf /var/lib/apt/lists/* && \
   rm /var/cache/apk/*
